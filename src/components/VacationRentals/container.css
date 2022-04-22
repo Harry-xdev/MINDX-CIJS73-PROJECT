@@ -1,0 +1,11 @@
+.rentals-container {
+    height: 260px;
+    border: 1px solid black;
+
+}
+
+.item-container {
+    display: flex;
+    height: 240px;
+    justify-content: center;
+}
