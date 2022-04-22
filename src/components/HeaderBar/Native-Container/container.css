@@ -1,5 +1,5 @@
-.header-bar {
+.native-cont {
     height: 60px;
+    width: 400px;
     border: 1px solid black;
-    display: flex;
 }
