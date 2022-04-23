@@ -1,6 +1,6 @@
+import { AccountDiv } from './AccountDiv'
 import './header.css'
 import { HeaderLogo } from './HeaderLogo'
-import { LoginButton } from './LoginButton'
 import { NativeContainer } from './Native-Container'
 export const HeaderBar = () => {
     
@@ -8,7 +8,12 @@ export const HeaderBar = () => {
         <div className="header-bar">
             <HeaderLogo />
             <NativeContainer />
-            <LoginButton />
+            <AccountDiv />
+
+
+
+
+            
         </div>
     )
 }

@@ -1,0 +1,7 @@
+.account-div {
+    height: 60px;
+    width: 400px;
+    border: 1px solid black;
+    position: absolute;
+    right: 0px;
+}
