@@ -6,11 +6,13 @@ export const AccountDiv = () => {
 
     return (
         <div className='account-div'>
-            Account div
-            <LoginButton />
-            <SignupButton />
+            <span className='btn-span'>
+                <LoginButton />
+                <SignupButton />
+            </span>
 
-            
+
+
         </div>
     )
 }

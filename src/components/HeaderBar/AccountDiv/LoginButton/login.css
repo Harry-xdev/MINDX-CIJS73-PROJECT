@@ -1,4 +1,14 @@
 .login-btn {
-    height: 30px;
-    width: 80px;
+    height: 46px;
+    width: 68px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background-color: white;
+    border: none;
+    color: rgb(104, 160, 249);
+}
+
+.login-btn:hover {
+    background-color: rgb(104, 160, 249);
+    color: white;
 }

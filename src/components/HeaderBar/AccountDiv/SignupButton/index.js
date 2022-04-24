@@ -3,7 +3,7 @@ export const SignupButton = () => {
 
     return (
         <button className="signup-btn">
-            Signup
+            Create account
         </button>
     )
 }

@@ -1,5 +1,21 @@
 .native-cont {
     height: 60px;
-    width: 400px;
-    border: 1px solid black;
+    width: 500px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+ul {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
