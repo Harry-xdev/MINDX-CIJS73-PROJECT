@@ -6,8 +6,15 @@
     border: none;
     background-color: white;
     color: rgb(104, 160, 249);
+    border: 1px solid rgb(104, 160, 249);
+    cursor: pointer;
+
 }
 .signup-btn:hover {
-    border: 1px solid rgb(104, 160, 249);
+    background-color: rgb(104, 160, 249);
+    color: white;
+}
 
+.btn:active {
+    background-color: rgb(47, 75, 120);
 }

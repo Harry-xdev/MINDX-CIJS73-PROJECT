@@ -6,9 +6,14 @@
     background-color: white;
     border: none;
     color: rgb(104, 160, 249);
+    cursor: pointer;
 }
 
 .login-btn:hover {
     background-color: rgb(104, 160, 249);
     color: white;
+}
+
+.btn:active {
+    background-color: rgb(47, 75, 120);
 }
