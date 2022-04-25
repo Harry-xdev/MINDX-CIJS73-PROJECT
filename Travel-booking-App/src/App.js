@@ -1,9 +1,9 @@
 import './App.css';
 import { BannerSection } from './components/PageHeader/BannerSection';
-import { DiscountContainer } from './components/HomePage/DiscountSection';
+import { DiscountContainer } from './components/Pages/HomePage/DiscountSection';
 import { HeaderBar } from './components/PageHeader/HeaderBar';
-import { Suggestion } from './components/HomePage/Suggestion';
-import { VacationRentals } from './components/HomePage/VacationRentals'
+import { Suggestion } from './components/Pages/HomePage/Suggestion';
+import { VacationRentals } from './components/Pages/HomePage/VacationRentals'
 
 function App() {
   return (
