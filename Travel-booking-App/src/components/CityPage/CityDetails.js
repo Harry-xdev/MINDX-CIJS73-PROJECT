@@ -1,3 +1,3 @@
-// trang render thông tin theo từng vùng / khu vực sau khi click chọn khu vực ở Home Page
+// trang render thông tin (list Khách sạn ) lọc theo từng vùng / khu vực sau khi click chọn khu vực ở Home Page
 // City 's Details page
 
