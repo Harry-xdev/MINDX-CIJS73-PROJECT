@@ -1,6 +1,6 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
-import './style.css'
+import './voucher.css'
 
 const slideVoucherImages = [
     // {
@@ -34,7 +34,7 @@ export const Voucher = () => {
             {slideVoucherImages.map((slideImage) => (
                 <div className="each-slide" key={slideImage.id}>
                     <div>
-                        <img src={require(`` + slideImage.url + ``)} />
+                        <img id="voucherImg" src={require(`` + slideImage.url + ``)} />
                     </div>
                 </div>
             ))}

@@ -13,7 +13,7 @@
     z-index: 99;
     margin: 50px;
 }
-img {
+#voucherImg {
     width:500px;
     box-shadow: 15px 10px #e2e2e2;
     border-radius: 15px ;
