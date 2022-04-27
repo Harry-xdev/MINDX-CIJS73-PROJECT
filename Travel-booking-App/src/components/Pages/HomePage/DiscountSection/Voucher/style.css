@@ -1,0 +1,20 @@
+@import "react-slideshow-image/dist/styles.css";
+
+
+.voucherContainer{
+    width:75%;
+    display: flex;
+    justify-content: center;
+}
+.slide{
+    width: 50%;
+}
+.each-slide {
+    z-index: 99;
+    margin: 50px;
+}
+img {
+    width:500px;
+    box-shadow: 15px 10px #e2e2e2;
+    border-radius: 15px ;
+}
