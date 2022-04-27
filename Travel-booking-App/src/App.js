@@ -14,8 +14,7 @@ function App() {
       <Suggestion />  
       <VacationRentals />
 
-    <img src={require ('./components/Datas/Images/Hotel-Images/H-01-R1.jpg')}/>
-    <img src="https://cdn6.agoda.net/images/property/highlights/transfer.svg"/>
+    
     </div>
   );
 }
