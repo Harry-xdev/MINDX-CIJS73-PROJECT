@@ -1,0 +1,16 @@
+.search-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+.searchForm {
+    background-color: rgb(255, 253, 240);
+    width: 800px;
+    height: 300px;
+    display: flex;
+    margin-top: -240px;
+    z-index: 99;
+    border-radius: 20px;
+    opacity: 0.8;
+}
