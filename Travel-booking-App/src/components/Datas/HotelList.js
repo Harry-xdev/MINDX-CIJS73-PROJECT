@@ -1,5 +1,6 @@
 // trang array obj data list
 // copy lên mock API
+// link mock API : https://mockapi.io/projects/6268162901dab900f1c9969c
 
 const HotelList = [
     { 
@@ -315,3 +316,5 @@ const HotelList = [
         "suggest" : "true"
     }
 ]
+
+
