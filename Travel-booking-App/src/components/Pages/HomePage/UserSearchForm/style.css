@@ -6,7 +6,7 @@
 }
 .searchForm {
     background-color: rgb(255, 253, 240);
-    width: 800px;
+    width: 50%;
     height: 300px;
     display: flex;
     margin-top: -240px;

@@ -4,7 +4,7 @@ export const HeaderLogo = () => {
 
     return (
         <div className="main-logo">
-            <Link to='/home' >Logo</Link>
+            <Link to='/' >Logo</Link>
         </div>
     )
 }

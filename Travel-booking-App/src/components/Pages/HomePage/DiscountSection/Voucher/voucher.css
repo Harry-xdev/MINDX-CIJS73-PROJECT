@@ -14,7 +14,7 @@
     margin: 50px;
 }
 #voucherImg {
-    width:500px;
+    width:100%;
     box-shadow: 15px 10px #e2e2e2;
     border-radius: 15px ;
 }
