@@ -2,3 +2,11 @@
 // City 's Details page
 // hiện list các ks cùng khu vực
 
+export const CityPage = () => {
+
+    return (
+        <div>
+            City Details
+        </div>
+    )
+}
