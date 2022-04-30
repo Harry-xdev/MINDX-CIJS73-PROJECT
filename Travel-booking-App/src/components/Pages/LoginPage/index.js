@@ -1,5 +1,16 @@
 
+import './main.css'
+import { LoginForm } from './SignUpForm'
 
+export const LoginPage = () => {
+    return (
+        <div className='main-page'>
 
-export * from './LoginForm'
+            <LoginForm />
+
+        </div>
+    )
+}
+
+export * from './SignUpForm'
 export * from './RegisterForm'
