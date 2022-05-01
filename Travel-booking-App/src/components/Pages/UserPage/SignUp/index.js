@@ -1,7 +1,10 @@
-import './byEmail.css'
-export const EmailForm = () => {
+import './signup.css'
+
+
+export const SignUp = () => {
     return (
-        <div>
+        <div className='container'>
+            <h1>Sign Up</h1>
             <form className='input-form'>
                 <label>First Name</label>
                 <input placeholder='Your first name' />
@@ -14,6 +17,14 @@ export const EmailForm = () => {
                 <label>Comfirm password</label>
                 <input placeholder='Comfirm password' />
             </form>
+            <div>
+                <input type='checkbox' id='checkbox' name='checkbox' />
+                <label htmlFor='checkbox'>Remmber me</label>
+            </div>
+            <button>Sign Up</button>
+            <button>Already have an account? Sign in</button>
+            <div><p>By signing in, I angree to Agoda's <a href='https://www.google.com'>Term of Use</a> and <a href='https://www.google.com'>Privacy Policy.</a></p></div>
+            
         </div>
     )
 }

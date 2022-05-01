@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 420px;
+    border: 1px solid black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 400px;
+    border: 1px solid black;
+    text-align: left;
+}
+#checkbox {
+    padding: 15px;
+}
+
+a {
+    color: rgb(68, 202, 247);
+}
+
+p {
+    font-size: 12px;
+}

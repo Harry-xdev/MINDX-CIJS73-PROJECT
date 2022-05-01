@@ -3,6 +3,6 @@ import './login.css'
 export const LoginButton = () => {
 
     return (
-        <Link to='/login' className='login-btn btn login-link'>Login</Link>
+        <Link to='/signin' className='login-btn btn login-link'>Sign in</Link>
     )
 }
