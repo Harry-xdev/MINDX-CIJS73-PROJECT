@@ -8,9 +8,9 @@ export const NativeContainer = () => {
                 {/* <li>
                     <NavLink to='/hotels'>Hotels</NavLink>
                 </li> */}
-                <li>
+                {/* <li>
                     <NavLink to='/city'>Best City</NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink to='/payment'>Payment</NavLink>
                 </li>

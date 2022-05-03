@@ -1,9 +1,9 @@
-import { BannerSection } from "../../PageHeader/BannerSection"
+import { BannerSection } from "./BannerSection"
 import { DiscountContainer } from "./DiscountSection"
 import { Suggestion } from "./Suggestion"
 import { VacationRentals } from "./VacationRentals"
 import { UserSearchForm } from './UserSearchForm'
-
+import {CitySection} from "./CitySection"
 
 export const HomePage = () => {
 
@@ -12,6 +12,7 @@ export const HomePage = () => {
             <BannerSection />
             <UserSearchForm/>
             <DiscountContainer />
+            <CitySection/>
             <Suggestion />
             <VacationRentals />
 

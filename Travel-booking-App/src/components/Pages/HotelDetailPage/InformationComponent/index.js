@@ -6,7 +6,7 @@
 // com3 : convenients (tiện ích)
 // com4 : các loại Phòng còn available ( chia làm 2 components con :
 //          thông tin phòng + icon tiện ích , thông tin cho khách hàng + giá)
-import {useParams} from "react-router-dom"
+import {useParams, Link} from "react-router-dom"
 import {useEffect , useState} from 'react'
 import './hotelDetail.css'
 import { BsStarFill } from "react-icons/bs";
@@ -156,7 +156,7 @@ useEffect(() => {
                                            <div>  {hotelDetail.room1Price} / đêm </div>
                                         </div>
                                         <div>
-                                             <button>Đặt Phòng</button>
+                                             <Link to={`/payment/${hotelDetail.id}`}><button>Đặt Phòng</button></Link>
                                         </div>   
                                   </div>
                                   <div className="detailRoomCard">
@@ -169,7 +169,7 @@ useEffect(() => {
                                            <div>  {hotelDetail.room2Price} / đêm </div>
                                         </div>
                                         <div>
-                                             <button>Đặt Phòng</button>
+                                            <Link to={`/payment/${hotelDetail.id}`}><button>Đặt Phòng</button></Link>
                                         </div>  
                                   </div>
                             </div>

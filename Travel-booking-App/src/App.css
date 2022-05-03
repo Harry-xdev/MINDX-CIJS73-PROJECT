@@ -1,5 +1,19 @@
+html {
+    scroll-behavior: smooth;
+}
 .App {
     text-align: center;
     font-family: mallory,Helvetica Neue,Helvetica,Arial,sans-serif;
     font-weight: 500;
+    scroll-behavior: smooth;
+}
+.topBtn {
+    display: flex;
+    position: fixed;
+    bottom:20px ;
+    right: 20px;
+    cursor: pointer;
+}
+.topBtn:hover{
+    background-color: bisque;
 }
