@@ -1,5 +1,5 @@
 import './App.css'
-import { HeaderBar, HotelsDetailPage, CityPage, Payment } from './components';
+import { HeaderBar, HotelsDetailPage, CityPage, Payment, HelpSection, FooterBar } from './components';
 import { HomePage } from './components/Pages/HomePage/home'
 import { Route, Routes } from 'react-router-dom'
 import { SignIn, SignUp } from './components/Pages/UserPage';
@@ -21,8 +21,8 @@ function App() {
 
       </Routes>
       <AccountData />
-
-
+      <HelpSection/>
+      <FooterBar/>
 
     </div>
   );
