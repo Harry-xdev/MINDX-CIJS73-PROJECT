@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { BsStarFill } from "react-icons/bs";
 import { IoMdPin } from "react-icons/io";
+import { NavLink } from 'react-router-dom';
 
 export const Suggestion = () => {
 
@@ -66,7 +67,7 @@ export const Suggestion = () => {
                          <div className='suggestPriceTitle'> Giá mỗi đêm từ </div>
                              <div  className='suggestPrice'> {suggestionHotel.averagePrice}<span>VND</span> </div>
                          </div>
-                         <button className='checkRooms'>Kiểm tra phòng trống</button>
+                         <NavLink to={`/hotels/${suggestionHotel.id}`}> <button className='checkRooms'>Kiểm tra phòng trống</button> </NavLink>
                        </div>
                     </div>
                 })

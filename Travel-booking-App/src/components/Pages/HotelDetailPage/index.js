@@ -1,14 +1,20 @@
-
+import {useState} from 'react'
+import {Outlet} from 'react-router-dom'
+export * from './Hotel-Images-Header'
+export * from './InformationComponent'
+export * from './RatingSection'
 
 export const HotelsDetailPage = () => {
 
+
+
     return (
         <div>
-            Hotels detail
+            hotel details
+            <Outlet/>
         </div>
     )
 }
 
-export * from './Hotel-Images-Header'
-export * from './InformationComponent'
-export * from './RatingSection'
+
+
