@@ -1,6 +1,7 @@
 import './App.css'
 import { HeaderBar, HotelsDetailPage, CityPage, Payment, HelpSection, FooterBar, HotelsDetail } from './components';
 import {CityDetail} from './components/Pages/CityPage/City Details'
+import {PaymentForm} from './components/Pages/PaymentPage/PaymentForm/PaymentForm'
 import { HomePage } from './components/Pages/HomePage/home'
 import { Route, Routes } from 'react-router-dom'
 import { SignIn, SignUp } from './components/Pages/UserPage';
@@ -33,7 +34,9 @@ function App() {
         <Route path='/city' element={<CityPage />} >
               <Route path=":name" element={<CityDetail/>}/>
           </Route>
-        <Route path='/payment' element={<Payment />} />
+        <Route path='/payment' element={<Payment />} >
+            <Route path=":id" element={<PaymentForm/>}/>  
+        </Route>
         <Route path='signin' element={<SignIn />} />
         <Route path='/signup' element={<SignUp />} />
 
