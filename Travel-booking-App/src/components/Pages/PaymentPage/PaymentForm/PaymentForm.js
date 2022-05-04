@@ -330,7 +330,7 @@ export const PaymentForm = () => {
           <HorizontalLinearStepper/>
           </div>
           {/* Step 2 */}
-            <div>
+            {/* <div>
             <div  className='payDetailContainer'>
                                 <div>
                                 Loại thẻ
@@ -353,7 +353,7 @@ export const PaymentForm = () => {
                                 </div>
                                 <input/>
                             </div>
-            </div>
+            </div> */}
         </div>
     )
 }
