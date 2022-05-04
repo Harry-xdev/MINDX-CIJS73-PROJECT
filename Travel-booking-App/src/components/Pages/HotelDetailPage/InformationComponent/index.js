@@ -122,8 +122,8 @@ export const HotelsDetail = () => {
   return (
     <div className="detailContainer">
       {hotelDetails.map((hotelDetail) => {
-        console.log(hotelDetail.convenient);
-        const conven = hotelDetail.convenient;
+        // console.log(hotelDetail.convenient);
+      
         return (
           <div className="detailSubContainer">
             <div className="detailFirstContainer">
@@ -145,14 +145,14 @@ export const HotelsDetail = () => {
             </div>
             <div className="convenientContainer">
               Tiện ích
-              {hotelDetail.convenient}
-              {ConvenientList.filter(
-                (icon) => icon.name == hotelDetail.convenient
-              ) ? (
-                <img src={icons.img} />
-              ) : (
-                "1"
-              )}
+              
+              {ConvenientList.filter(icon => hotelDetail.convenient.includes(icon.name)).map((icon) => {
+                   return <div>
+                     <img src={require(``+icon.img+``)}/>
+                     {icon.name}
+                     </div>
+              })
+              }
             </div>
             <div>
               <div className="detailRoomTitle">
@@ -169,7 +169,7 @@ export const HotelsDetail = () => {
                     <div> {hotelDetail.room1Price} / đêm </div>
                   </div>
                   <div>
-                    <Link to={`/payment/${hotelDetail.id}`}>
+                    <Link to={`/payment/${hotelDetail.id}?room1`}>
                       <button>Đặt Phòng</button>
                     </Link>
                   </div>
@@ -184,7 +184,7 @@ export const HotelsDetail = () => {
                     <div> {hotelDetail.room2Price} / đêm </div>
                   </div>
                   <div>
-                    <Link to={`/payment/${hotelDetail.id}`}>
+                    <Link to={`/payment/${hotelDetail.id}?room2`}>
                       <button>Đặt Phòng</button>
                     </Link>
                   </div>

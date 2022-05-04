@@ -1,5 +1,5 @@
 // khung import steps
-import {useParams} from "react-router-dom"
+import {useParams, useSearchParams} from "react-router-dom"
 import {useEffect , useState, Form} from 'react'
 import './pay.css'
 
@@ -7,8 +7,9 @@ import './pay.css'
 export const PaymentForm = () => {
 
     const params = useParams()
-    console.log(params)
-    
+    const [searchParams, setSearchParams] = useSearchParams()
+    // console.log(params)
+    console.log(searchParams)
     const [paymentDetails, setPaymentDetail] = useState([])
 
     const handleFetchHotelListDetail = async () => {
@@ -46,6 +47,17 @@ export const PaymentForm = () => {
                         <div>
                              {hotel.addressDetail}
                         </div>
+                        <div>
+                             <div>
+                                  {searchParams.get('room') === '?room1' ? hotel.room1Name : hotel.room2Name }
+                              </div>
+                              <div>
+                                   {searchParams.get('room') === '?room1' ? hotel.room1Price : hotel.room2Price }
+                                </div>
+                                <span>
+                                    VND
+                                </span> 
+                         </div>
                     </div>
                     <div key={hotel.id} className='payContainer'> 
                         <div>
