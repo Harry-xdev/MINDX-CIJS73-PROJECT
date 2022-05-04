@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "react-slideshow-image": "^3.7.3"
+    "formik": "^2.2.9",
+    "react-slideshow-image": "^3.7.3",
+    "yup": "^0.32.11"
   }
 }

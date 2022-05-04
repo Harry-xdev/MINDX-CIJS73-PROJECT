@@ -1,50 +1,60 @@
-import './App.css'
-import { HeaderBar, HotelsDetailPage, CityPage, Payment, HelpSection, FooterBar, HotelsDetail } from './components';
-import {CityDetail} from './components/Pages/CityPage/City Details'
-import {PaymentForm} from './components/Pages/PaymentPage/PaymentForm/PaymentForm'
-import { HomePage } from './components/Pages/HomePage/home'
-import { Route, Routes } from 'react-router-dom'
-import { SignIn, SignUp } from './components/Pages/UserPage';
-import { AccountData } from './components/Datas/UserData/accountData'
-import {useState, useEffect} from 'react'
-
+import "./App.css";
+import {
+  HeaderBar,
+  HotelsDetailPage,
+  CityPage,
+  Payment,
+  HelpSection,
+  FooterBar,
+  HotelsDetail,
+} from "./components";
+import { CityDetail } from "./components/Pages/CityPage/City Details";
+import { PaymentForm } from "./components/Pages/PaymentPage/PaymentForm/PaymentForm";
+import { HomePage } from "./components/Pages/HomePage/home";
+import { Route, Routes } from "react-router-dom";
+import { SignIn, SignUp } from "./components/Pages/UserPage";
+import { AccountData } from "./components/Datas/UserData/accountData";
+import { useState, useEffect } from "react";
 
 function App() {
-  const [showBtn, setShowBtn] = useState(false)
+  const [showBtn, setShowBtn] = useState(false);
   const BackTop = () => {
-    document.documentElement.scrollTop = 0
-  }
+    document.documentElement.scrollTop = 0;
+  };
   const scrollToTop = () => {
-    setShowBtn(document.documentElement.scrollTop > 0 ? true : false)
-  }
+    setShowBtn(document.documentElement.scrollTop > 0 ? true : false);
+  };
   useEffect(() => {
-    document.addEventListener('scroll', scrollToTop)
-     return () => {
-       document.removeEventListener('scroll', scrollToTop)
-     }
-  })
+    document.addEventListener("scroll", scrollToTop);
+    return () => {
+      document.removeEventListener("scroll", scrollToTop);
+    };
+  });
   return (
     <div className="App">
       <HeaderBar />
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/hotels' element={<HotelsDetailPage />} >
-              <Route path=":id" element={<HotelsDetail/>}/>
-          </Route>
-        <Route path='/city' element={<CityPage />} >
-              <Route path=":name" element={<CityDetail/>}/>
-          </Route>
-        <Route path='/payment' element={<Payment />} >
-            <Route path=":id" element={<PaymentForm/>}/>  
+        <Route path="/" element={<HomePage />} />
+        <Route path="/hotels" element={<HotelsDetailPage />}>
+          <Route path=":id" element={<HotelsDetail />} />
         </Route>
-        <Route path='signin' element={<SignIn />} />
-        <Route path='/signup' element={<SignUp />} />
-
+        <Route path="/city" element={<CityPage />}>
+          <Route path=":name" element={<CityDetail />} />
+        </Route>
+        <Route path="/payment" element={<Payment />}>
+          <Route path=":id" element={<PaymentForm />} />
+        </Route>
+        <Route path="signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
       <AccountData />
-      <HelpSection/>
-      <FooterBar/>
-      {showBtn && <button className="topBtn" onClick={BackTop}>back to TOP</button> }
+      <HelpSection />
+      <FooterBar />
+      {showBtn && (
+        <button className="topBtn" onClick={BackTop}>
+          back to TOP
+        </button>
+      )}
     </div>
   );
 }

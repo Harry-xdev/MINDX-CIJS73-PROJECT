@@ -10,7 +10,7 @@ export const HotelsDetailPage = () => {
 
     return (
         <div>
-            hotel details
+            Hotel details
             <Outlet/>
         </div>
     )
