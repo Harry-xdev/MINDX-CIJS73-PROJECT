@@ -35,7 +35,7 @@ export const CityDetail = () => {
 
                     return <div key={suggestionHotel.id} className='suggestionHotelCard'> 
                   <div className="suggestionHotelCardInside" >  
-                    <img src={suggestionHotel.img1} className="suggestionHotelImg"/>
+                    <img src={require(``+suggestionHotel.img1+``)} className="suggestionHotelImg"/>
                     <div className='suggestHotelCardInfo'>
                          <div className='suggestHotelCardName'>   
                              {suggestionHotel.name}

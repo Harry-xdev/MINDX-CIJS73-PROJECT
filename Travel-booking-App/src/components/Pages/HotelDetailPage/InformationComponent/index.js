@@ -128,10 +128,10 @@ export const HotelsDetail = () => {
           <div className="detailSubContainer">
             <div className="detailFirstContainer">
               <div>
-                <img className="mainImg" src={hotelDetail.img1} />
-                <img className="subImg" src={hotelDetail.img2} />
-                <img className="subImg" src={hotelDetail.img3} />
-                <img className="subImg" src={hotelDetail.img4} />
+                <img className="mainImg" src={require(``+hotelDetail.img1+``)} />
+                <img className="subImg" src={require(``+hotelDetail.img2+``)} />
+                <img className="subImg" src={require(``+hotelDetail.img3+``)} />
+                <img className="subImg" src={require(``+hotelDetail.img4+``)} />
               </div>
               <div className="detailInfoContainer">
                 <div className="detailName">{hotelDetail.name}</div>
@@ -161,7 +161,7 @@ export const HotelsDetail = () => {
               <div>
                 <div className="detailRoomCard">
                   <div>
-                    <img className="detailRoomImg" src={hotelDetail.room1Img} />
+                    <img className="detailRoomImg" src={require(``+hotelDetail.room1Img+``)} />
                   </div>
                   <div>
                     <div> {hotelDetail.room1Name}</div>
@@ -169,14 +169,14 @@ export const HotelsDetail = () => {
                     <div> {hotelDetail.room1Price} / đêm </div>
                   </div>
                   <div>
-                    <Link to={`/payment/${hotelDetail.id}?room1`}>
+                    <Link to={`/payment/${hotelDetail.id}?room=1`}>
                       <button>Đặt Phòng</button>
                     </Link>
                   </div>
                 </div>
                 <div className="detailRoomCard">
                   <div>
-                    <img className="detailRoomImg" src={hotelDetail.room2Img} />
+                    <img className="detailRoomImg" src={require(``+hotelDetail.room2Img+``)} />
                   </div>
                   <div>
                     <div> {hotelDetail.room2Name}</div>
@@ -184,7 +184,7 @@ export const HotelsDetail = () => {
                     <div> {hotelDetail.room2Price} / đêm </div>
                   </div>
                   <div>
-                    <Link to={`/payment/${hotelDetail.id}?room2`}>
+                    <Link to={`/payment/${hotelDetail.id}?room=2`}>
                       <button>Đặt Phòng</button>
                     </Link>
                   </div>
