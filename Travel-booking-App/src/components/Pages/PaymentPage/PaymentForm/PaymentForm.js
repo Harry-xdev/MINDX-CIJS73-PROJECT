@@ -250,31 +250,31 @@ console.log('price', Price)
               {activeStep === 1 && ( <div>
                   {
                        paymentDetails.map((hotel) => {
-                       return  <div>
-                        <div  className='payDetailContainer'>
-                                            <div>
-                                            Loại thẻ
+                           return <div> 
+                                    <div  className='payDetailContainer'>
+                                         <div>
+                                            Hình thức thanh toán
+                                         </div>
+                                     <div>
+                                           <div>
+                                                <div>Visa</div>
+                                                 <input type='radio'/>
                                             </div>
                                             <div>
-                                                <div>
-                                                   <div>Visa</div>
-                                                   <input type='radio'/>
-                                                </div>
-                                                <div>
-                                                   <div>MasterCard</div>
-                                                   <input type='radio'/>
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                        <div  className='payDetailContainer'>
-                                            <div>
-                                             Số tài khoản / Số thẻ
-                                            </div>
+                                                <div>MasterCard</div>
+                                                 <input type='radio'/>
+                                             </div>
+                                     </div>
+                                
+                                    </div>
+                                    <div  className='payDetailContainer'>
+                                           <div>
+                                                Số tài khoản / Số thẻ
+                                           </div>
                                             <input/>
-                                        </div>
-                        </div>
-                    </div>
+                                     </div>
+
+                                </div>
 
                        })
                   }
