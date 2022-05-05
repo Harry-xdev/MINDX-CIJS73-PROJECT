@@ -1,16 +1,35 @@
 import { Link } from 'react-router-dom'
 import './signin.css'
+import React, { useState, useEffect } from 'react'
+
 
 
 export const SignIn = () => {
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
     return (
         <div className='container'>
             <h1>Sign in</h1>
             <form className='input-form'>
                 <label>Email</label>
-                <input placeholder='Email' />
+                <input
+                    placeholder='Email'
+                    type='text'
+                    onChange={
+                        (e) => setEmail(e.target.value)
+                    }
+                />
+
                 <label>Password</label>
-                <input type='password' placeholder='Password' />
+                <input
+                    placeholder='Password'
+                    type='password'
+                    onChange={
+                        (e) => setPassword(e.target.value)
+                    }
+                />
                 <label>Comfirm password</label>
 
             </form>
