@@ -2,7 +2,7 @@
 import {useParams, useSearchParams, Link} from "react-router-dom"
 import {useEffect , useState, Form} from 'react'
 import './pay.css'
-import { BsStarFill } from "react-icons/bs";
+import { BsEmojiDizzy, BsStarFill } from "react-icons/bs";
 
 
 
@@ -98,16 +98,16 @@ export default function HorizontalLinearStepper() {
   const [searchParams, setSearchParams] = useSearchParams()
   // console.log(params)
   console.log(searchParams)
-  const [paymentDetails, setPaymentDetail] = useState([])
+  const [selectedHotel, setSelectedHotel] = useState([])
 
   const handleFetchHotelListDetail = async () => {
       const response = await fetch('https://6268162901dab900f1c9969b.mockapi.io/hotelList')
       const dataHotel = await response.json();  
       const data = dataHotel.filter((item) => {
             return item.id === params.id
-      })
+      })[0]
       console.log('city ' ,data)
-      setPaymentDetail(data)
+      setSelectedHotel(data)
   
   }
 
@@ -115,19 +115,40 @@ export default function HorizontalLinearStepper() {
       handleFetchHotelListDetail()
   }, [])
 
-    
-const Price = Number(paymentDetails.map((hotel) => {return searchParams.get('room') === '1' ? hotel.room1Price : hotel.room2Price }))
-console.log('price', Price)
 
- const [price, setPrice] = useState(Price)
-   
+
+ const [price, setPrice] = useState(0)
+ 
+useEffect(() => {
+  
+    if(searchParams.get('room')=== '1' ) {
+      setPrice(selectedHotel.room1Price)
+    }
+    if(searchParams.get('room')=== '2' ) {
+      setPrice(selectedHotel.room2Price)
+    }
+}, [selectedHotel,searchParams])
+
+ toString(price).replace(" ","")
+
+  const [bed, setBed] = useState(false)
+
   const Clicked = () => {
-      setPrice(Price + 800000)
+       setBed(!bed) 
   }
 
+useEffect(() => {
+    
+  if (bed === true) {
+    setPrice(Number(`${price}`.replaceAll(" ","")) + 800000)
+  }
+  if (bed === false) {
+    setPrice(Number(`${price}`.replaceAll(" ","")) - 800000)
+  }
 
+},[bed])
 
-
+console.log(price)
 
 
 
@@ -170,35 +191,34 @@ console.log('price', Price)
           </Typography>
           <div>
               {activeStep === 0 && (<div>
-                {
-                paymentDetails.map((hotel) => {
-                    return <div>
+              
+                    <div>
                     <div>
                         <div>
-                            <img src={require(``+hotel.img1+``)} />
+                            <img src={selectedHotel.img1 && require(``+selectedHotel.img1+``)} />
                         </div>
                          <div>
-                             {hotel.name}
+                             {selectedHotel.name}
                         </div>
                         <div>
-                             {hotel.star} <BsStarFill style={{ color: "orange" }}/>
+                             {selectedHotel.star} <BsStarFill style={{ color: "orange" }}/>
                         </div>
                         <div>
-                             {hotel.addressDetail}
+                             {selectedHotel.addressDetail}
                         </div>
                         <div>
                              <div >
-                                  {searchParams.get('room') === '1' ? hotel.room1Name : hotel.room2Name }
+                                  {searchParams.get('room') === '1' ? selectedHotel.room1Name : selectedHotel.room2Name }
                               </div>
                               <div>
-                                   {searchParams.get('room') === '1' ? hotel.room1Price : hotel.room2Price }
+                                   {searchParams.get('room') === '1' ? selectedHotel.room1Price : selectedHotel.room2Price }
                                 </div>
                                 <span>
                                     VND
                                 </span> 
                          </div>
                     </div>
-                    <div key={hotel.id} className='payContainer'> 
+                    <div key={selectedHotel.id} className='payContainer'> 
                         <div>
                             <div className='payTitle'>
                                 Vui lòng điền thông tin của bạn
@@ -244,13 +264,12 @@ console.log('price', Price)
                     
                  </div>
                  </div>
-                })
-            }
+                
+            
                   </div>) }
               {activeStep === 1 && ( <div>
-                  {
-                       paymentDetails.map((hotel) => {
-                           return <div> 
+                
+                            <div> 
                                     <div  className='payDetailContainer'>
                                          <div>
                                             Hình thức thanh toán
@@ -276,8 +295,7 @@ console.log('price', Price)
 
                                 </div>
 
-                       })
-                  }
+                
               </div>)}
               {activeStep === 2 && 'buoc cuoi'}
           </div>
