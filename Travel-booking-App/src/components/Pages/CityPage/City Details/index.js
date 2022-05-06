@@ -10,6 +10,7 @@ export const CityDetail = () => {
 
   const [cityDetails, setCityDetail] = useState([]);
   const [searchWithNameHotel, setSearchWithNameHotel] = useState("");
+  const [cityDetailsAfterSearch, setCityDetailsAfterSearch] = useState([]);
 
   const handleFetchHotelListDetail = async () => {
     const response = await fetch(
@@ -19,7 +20,7 @@ export const CityDetail = () => {
     const data = dataHotel.filter((item) => {
       return item.city === params.name;
     });
-    console.log("city ", data);
+    // console.log("city ", data);
     setCityDetail(data);
   };
 
@@ -27,19 +28,22 @@ export const CityDetail = () => {
     setSearchWithNameHotel(e.target.value);
   };
 
+  useEffect(() => {
+    handleFetchHotelListDetail();
+  }, []);
+
   const handleFetchWithName = () => {
-    const resultName = cityDetails.filter((hotel) => {
-        return hotel.name
-          .toLowerCase()
-          .trim()
-          .includes(searchWithNameHotel.trim());
-      }
-    );
-    setCityDetail(resultName);
+    const results = cityDetails.filter((hotel) => {
+      hotel.toLowerCase().includes(searchWithNameHotel);
+    });
+    if (results === null) {
+      setCityDetailsAfterSearch(cityDetails);
+    } else {
+      setCityDetailsAfterSearch(results);
+    }
   };
 
   useEffect(() => {
-    handleFetchHotelListDetail();
     handleFetchWithName();
   }, [searchWithNameHotel]);
 
