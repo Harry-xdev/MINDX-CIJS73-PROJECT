@@ -22,18 +22,11 @@ export const CityDetail = () => {
     });
     // console.log("city ", data);
     setCityDetail(data);
+    setCityDetailsAfterSearch(data);
   };
 
   useEffect(() => {
     handleFetchHotelListDetail();
-  }, []);
-
-  const handleFirstRender = () => {
-    setCityDetailsAfterSearch(cityDetails);
-  };
-
-  useEffect(() => {
-    handleFirstRender();
   }, []);
 
   const handleChangeWithName = (e) => {
@@ -57,8 +50,9 @@ export const CityDetail = () => {
 
   return (
     <div>
-      <div className="searchWithName">
-        <label>Lọc theo tên khách sạn</label>
+      <div className="suggestionContainer">
+        <div className="suggestionTitle">{params.name}</div>
+        <div className="searchWithName">
         <input
           type="text"
           placeholder="nhap ten khach san"
@@ -66,8 +60,6 @@ export const CityDetail = () => {
           onChange={handleChangeWithName}
         />
       </div>
-      <div className="suggestionContainer">
-        <div className="suggestionTitle">{params.name}</div>
         <div className="suggestionSubContainer">
           {cityDetailsAfterSearch.map((suggestionHotel) => {
             return (
