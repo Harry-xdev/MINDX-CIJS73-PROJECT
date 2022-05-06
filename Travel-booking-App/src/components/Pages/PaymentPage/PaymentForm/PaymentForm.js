@@ -195,19 +195,19 @@ console.log(price)
                     <div>
                     <div>
                         <div>
-                            <img src={selectedHotel.img1 && require(``+selectedHotel.img1+``)} />
+                            <img className='selectedHotelImg' src={selectedHotel.img1 && require(``+selectedHotel.img1+``)} />
                         </div>
-                         <div>
+                         <div className='selectedHotelName'>
                              {selectedHotel.name}
                         </div>
-                        <div>
+                        <div className='selectedHotelStar'>
                              {selectedHotel.star} <BsStarFill style={{ color: "orange" }}/>
                         </div>
-                        <div>
+                        <div className='selectedHotelAddress'>
                              {selectedHotel.addressDetail}
                         </div>
                         <div>
-                             <div >
+                             <div className='selectedHotelRoomName' >
                                   {searchParams.get('room') === '1' ? selectedHotel.room1Name : selectedHotel.room2Name }
                               </div>
                               <div>
@@ -224,38 +224,38 @@ console.log(price)
                                 Vui lòng điền thông tin của bạn
                             </div>
                             <div className='payDetailContainer'>
-                                <div>
+                                <div className='payDetailName'>
                                 Họ và tên trong hộ chiếu / CMND / CCCD
                                 </div>
                                <input/>
                             </div>
                             <div  className='payDetailContainer'>
-                                <div>
+                                <div className='payDetailName'>
                                  Email
                                 </div>
                                <input/>
                             </div>
                             <div  className='payDetailContainer'>
-                                <div>
+                                <div className='payDetailName'>
                                   Số điện thoại
                                 </div>
                                <input/>
                             </div>
                             <div  className='payDetailContainer'>
                             <input type='checkbox' id="check" onClick={Clicked}/>
-                                <div>
+                                <div className='payDetailName'>
                                 Thêm giường phụ (+ 800.000VND/ 1 giường)
                                 </div>
                                 
                             </div>
                             <div  className='payDetailContainer'>
-                                <div>
+                                <div className='payDetailName' >
                                 Yêu cầu thêm
                                 </div>
                                 <input/>
                             </div>
                             <div  className='payDetailContainer'>
-                                <div>
+                                <div className='payDetailName'>
                                 Tổng giá tiền
                                 </div>
                                  {price}
@@ -341,11 +341,12 @@ console.log(price)
 export const PaymentForm = () => {
 
     return (
-        <div className=''>
-          
-          
-          <div>
-          <HorizontalLinearStepper/>
+        <div className='pay'>
+          <img id='payImg' src={require('./back-ground img/1.jpg')}/>
+          <div id='payBg'></div>
+          <div className='pay' id='pay'>
+            
+          <HorizontalLinearStepper />
           </div>
           {/* Step 2 */}
             {/* <div>

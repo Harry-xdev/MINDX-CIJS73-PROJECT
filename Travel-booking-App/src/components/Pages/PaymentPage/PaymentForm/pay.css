@@ -1,16 +1,45 @@
 .pay {
     display:flex;
     justify-content: center;
+    
+   
 }
+#payImg {
+    width:100%;
+    z-index: -1;
+    height:1500px;
+    
+}
+#payBg {
+    width:700px;
+    height:1100px;
+    position:absolute;
+    justify-content: center;
+    background-color: rgb(255, 254, 254);
+    opacity:0.6;
+    top:100px;
+    box-shadow: 10px lightgrey;
+    
+}
+#pay {
+    position:absolute;
+    justify-content: center;
+    top:120px;
+    
+}
+.selectedHotelImg{
+    width:500px;
+}
+
 .payContainer {
-    border: 1px solid grey;
-    width: 800px;
+    
+   
     padding: 20px 0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 30px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
 }
 .payTitle {
     font-size: 30px;
@@ -18,16 +47,18 @@
     
 }
 .payDetailContainer {
-    width: 600px;
+   
     display: flex;
     flex-direction: column;
    
     margin: 15px;
-    margin-left: 100px;
+    
     text-align: left;
-
+    padding:0 30px;
 }
-
+.payDetailName {
+    margin: 10px 0;
+}
 .payBtn {
     width : 200px;
     height:40px;
