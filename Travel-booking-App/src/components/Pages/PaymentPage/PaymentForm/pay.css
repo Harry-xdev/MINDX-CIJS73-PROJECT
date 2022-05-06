@@ -7,12 +7,12 @@
 #payImg {
     width:100%;
     z-index: -1;
-    height:1500px;
+    height:1000px;
     
 }
 #payBg {
     width:700px;
-    height:1100px;
+    height:800px;
     position:absolute;
     justify-content: center;
     background-color: rgb(255, 254, 254);
@@ -25,12 +25,45 @@
     position:absolute;
     justify-content: center;
     top:120px;
+    width:900px;
+}
+.payLayout {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.selectedHotelInfo{
+   margin-top: 10px;
     
 }
 .selectedHotelImg{
-    width:500px;
+    width:150px;
+    height:150px;
+    border-radius: 50%;
+    float:left ;
 }
-
+.selectedHotelName {
+    font-weight: bolder;
+    margin-top: 20px;
+}
+.selectedHotelAddress {
+    font-style: italic;
+    font-size: 15px;
+    color:grey;
+    margin: 10px 0;
+}
+.selectedHotelRoomName {
+    color: rgb(33, 102, 114);
+    font-weight: bolder;
+}
+.selectedHotelRoomPrice{
+    color: brown;
+    font-weight: bolder;
+    margin: 10px ;
+}
+.vnd {
+    margin-left: 15px;
+}
 .payContainer {
     
    
@@ -38,7 +71,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 30px;
+    
+    margin-left: 70px;
     margin-bottom: 10px;
 }
 .payTitle {
@@ -47,19 +81,113 @@
     
 }
 .payDetailContainer {
-   
-    display: flex;
-    flex-direction: column;
-   
-    margin: 15px;
     
+    display: flex;
+    color:rgb(0, 127, 185);
+    border-bottom: 0.8px solid white;
+    margin: 15px;
+    width:400px;
     text-align: left;
     padding:0 30px;
 }
 .payDetailName {
     margin: 10px 0;
 }
-.payBtn {
-    width : 200px;
-    height:40px;
+.payDetailInput, .payDetailInput:after {
+    border : rgba(255, 0, 0, 0);
+    background-color:rgba(255, 0, 0, 0);
+    margin-left: 10px;
+    width:300px;
+    padding-left: 10px;
+    font-weight: bolder;
+    font-style: italic;
+    height: 40px;
+}
+#check {
+    position: relative;
+    top:10px;
+   margin-right: 10px;
+}
+.payDetailContainerS2{
+    display: flex;
+    color:rgb(0, 127, 185);
+   flex-direction: column;
+    width:400px;
+    text-align: left;
+    padding:0 30px;
+    margin-bottom: 10px;
+    
+}
+.cardContainer{
+    display: flex;
+}
+.cardItemLayout{
+    display: flex;
+    margin: 0 15px;
+}
+.cardItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#cardImg {
+    width: 90px;
+}
+.box2 {
+    display: flex;
+}
+#payDetailS2 {
+    border-bottom: 1px solid white;
+}
+#cardImg2{
+    width: 250px;
+    border-radius: 10px;
+    
+}
+#date{
+    border:none;
+}
+#CVC {
+    margin-left: 10px;
+    border-bottom: 1px solid white;
+}
+#inputCVC{
+    width:150px;
+}
+#CVCimg {
+    width:500px;
+    height:70px;
+}
+#sdt {
+    width:500px;
+}
+.boxS3{
+    width: 500px;
+    height: 300px;
+    
+    font-size: 30px;
+   margin: 80px 40px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25%;
+ 
+  
+}
+.thanhtoanthanhcong{
+    margin-bottom: 50px;
+    color: green;
+    font-weight: bolder;
+}
+.guixacnhan{
+    color: rgb(0, 127, 185);
+    font-style: italic;
+}
+#homeBtn{
+    color: rgb(0, 127, 185);
+    font-weight: bolder;
 }

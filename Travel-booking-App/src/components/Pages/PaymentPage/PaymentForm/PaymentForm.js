@@ -2,7 +2,7 @@
 import {useParams, useSearchParams, Link} from "react-router-dom"
 import {useEffect , useState, Form} from 'react'
 import './pay.css'
-import { BsEmojiDizzy, BsStarFill } from "react-icons/bs";
+import { BsEmojiDizzy, BsStarFill, BsFillPersonFill,BsEnvelopeFill, BsFillTelephoneFill } from "react-icons/bs";
 
 
 
@@ -148,9 +148,31 @@ useEffect(() => {
 
 },[bed])
 
-console.log(price)
 
+const CardsList = [
+  {
+    name: 'Visa',
+    url : './card Img/visa.png'
+  },
+  {
+    name: 'MasterCard',
+    url : './card Img/masterCard.png'
+  },
+  {
+    name: 'JCB',
+    url : './card Img/jcb.png'
+  },
+  {
+    name: 'AME',
+    url : './card Img/americanexpress.png'
+  },
+]
 
+const [cards, setCard] = useState(CardsList)
+
+useEffect(() => {
+  setCard(cards)
+},[])
 
 
   return (
@@ -192,8 +214,8 @@ console.log(price)
           <div>
               {activeStep === 0 && (<div>
               
-                    <div>
-                    <div>
+                    <div className="payLayout">
+                    <div className='selectedHotelInfo'>
                         <div>
                             <img className='selectedHotelImg' src={selectedHotel.img1 && require(``+selectedHotel.img1+``)} />
                         </div>
@@ -201,7 +223,9 @@ console.log(price)
                              {selectedHotel.name}
                         </div>
                         <div className='selectedHotelStar'>
-                             {selectedHotel.star} <BsStarFill style={{ color: "orange" }}/>
+                             {selectedHotel.star} <BsStarFill style={{ 
+                               color: "orange",
+                              }}/>
                         </div>
                         <div className='selectedHotelAddress'>
                              {selectedHotel.addressDetail}
@@ -210,36 +234,43 @@ console.log(price)
                              <div className='selectedHotelRoomName' >
                                   {searchParams.get('room') === '1' ? selectedHotel.room1Name : selectedHotel.room2Name }
                               </div>
-                              <div>
+                              <div className='selectedHotelRoomPrice'>
                                    {searchParams.get('room') === '1' ? selectedHotel.room1Price : selectedHotel.room2Price }
-                                </div>
-                                <span>
+                                
+                                <span className="vnd">
                                     VND
                                 </span> 
+                                </div>
                          </div>
                     </div>
                     <div key={selectedHotel.id} className='payContainer'> 
                         <div>
                             <div className='payTitle'>
-                                Vui lòng điền thông tin của bạn
+                              
                             </div>
                             <div className='payDetailContainer'>
                                 <div className='payDetailName'>
-                                Họ và tên trong hộ chiếu / CMND / CCCD
+                                < BsFillPersonFill style={{color :'white', fontSize : '30px' }}/>
                                 </div>
-                               <input/>
+                               <input className='payDetailInput' type='text' placeholder=" Họ và tên trong hộ chiếu / CMND / CCCD"/>
                             </div>
                             <div  className='payDetailContainer'>
                                 <div className='payDetailName'>
-                                 Email
+                                <BsEnvelopeFill style={{
+                                  color :'white',
+                                  fontSize : '30px'
+                                }}/>
                                 </div>
-                               <input/>
+                               <input className='payDetailInput' type='text' placeholder='Email'/>
                             </div>
                             <div  className='payDetailContainer'>
                                 <div className='payDetailName'>
-                                  Số điện thoại
+                                <BsFillTelephoneFill style={{
+                                  color :'white',
+                                  fontSize : '30px'
+                                }}/>
                                 </div>
-                               <input/>
+                               <input className='payDetailInput' type='text' placeholder="Số điện thoại"/>
                             </div>
                             <div  className='payDetailContainer'>
                             <input type='checkbox' id="check" onClick={Clicked}/>
@@ -252,13 +283,13 @@ console.log(price)
                                 <div className='payDetailName' >
                                 Yêu cầu thêm
                                 </div>
-                                <input/>
+                                <input className='payDetailInput' type='text' placeholder="Chú thích: giờ check-in, ..."/>
                             </div>
                             <div  className='payDetailContainer'>
                                 <div className='payDetailName'>
-                                Tổng giá tiền
+                                Tổng giá tiền:   <span className='selectedHotelRoomPrice'>{price} VND</span>  
                                 </div>
-                                 {price}
+                               
                             </div>
                     </div>
                     
@@ -269,35 +300,102 @@ console.log(price)
                   </div>) }
               {activeStep === 1 && ( <div>
                 
-                            <div> 
-                                    <div  className='payDetailContainer'>
-                                         <div>
-                                            Hình thức thanh toán
-                                         </div>
-                                     <div>
-                                           <div>
-                                                <div>Visa</div>
-                                                 <input type='radio'/>
-                                            </div>
-                                            <div>
-                                                <div>MasterCard</div>
-                                                 <input type='radio'/>
-                                             </div>
-                                     </div>
-                                
-                                    </div>
-                                    <div  className='payDetailContainer'>
-                                           <div>
-                                                Số tài khoản / Số thẻ
-                                           </div>
-                                            <input/>
-                                     </div>
-
+                <div>
+            <div  className='payDetailContainerS2'>
+                                <div className="payDetailName">
+                                Thanh toán bằng thẻ
                                 </div>
+                                <div className="cardContainer">
+                                      {
+                                        cards.map((card) => {
+                                          return <div className="cardItemLayout">
+                                            <input name='card' type='radio'/>
+                                             <div className="cardItem">
+                                               <img id='cardImg' src={require(``+card.url+``)}/>
+                                               <div>{card.name} </div>
+                                               
+                                               </div>
+                                               
+                                            </div>
+                                        })
+                                      }
+                                </div>
+                                
+                            </div>
+                      <div className="box2">
+                       <div  className='payDetailContainerS2'>
+                               <div id='payDetailS2'>
+                                    <div className="payDetailName" >
+                                       Tên trên thẻ
+                                    </div>
+                                    <input className='payDetailInput' type='text' placeholder="Nhập tên.."/>
+                              </div>
+                              <div id='payDetailS2'>
+                                     <div className="payDetailName">
+                                      Số tài khoản / Số thẻ
+                                     </div>
+                                     <input className='payDetailInput' type='text' placeholder='Nhập số tài khoản...'/>
+                              </div>
+                            </div>
+                            <img id='cardImg2' src={require('./card Img/cardImg.png')}/>
+                           </div>
+                            <div  className='payDetailContainer' id='date'>
+                                <div >
+                                     <div className="payDetailName">
+                                       Ngày hết hạn
+                                      </div>
+                                      <input type='date'/>
+                                 </div> 
+                                 <div id='CVC'>   
+                                     <div className="payDetailName">
+                                       Mã bảo mật CVC
+                                    </div>
+                                     <input className='payDetailInput' id='inputCVC' type='text' placeholder='Nhập mã...'/>
+                                  </div>
+                                <img id="CVCimg" src={require('./card Img/cvv-icon.png')}/>
+                            </div>
+                            <div  className='payDetailContainerS2'>
+                                <div className="payDetailName">
+                                 Thanh toán bằng ví điện tử
+                                </div>
+                                <div className="cardContainer">
+                                   <div className="cardItemLayout">
+                                   <input name='card' type='radio'/>
+                                   <div className="cardItem">
+                                     <img  id='cardImg' src={require('./card Img/momo.png')}/>
+                                     MoMo
+                                     </div>
+                                   </div>
+                                   <div className="cardItemLayout">
+                                   <input name='card' type='radio'/>
+                                   <div className="cardItem">
+                                     <img  id='cardImg' src={require('./card Img/paypal_3.png')}/>
+                                     Paypal
+                                   </div>
+                                   </div>
+                                </div>
+                            </div>
+                            <div  className='payDetailContainer' id='sdt'>
+                                <div className="payDetailName">
+                                 Số tài khoản / điện thoại
+                                </div>
+                                <input className='payDetailInput'  type='text' placeholder='(+84...)'/>
+                            </div>
+            </div>
+      
 
                 
               </div>)}
-              {activeStep === 2 && 'buoc cuoi'}
+              {activeStep === 2 && (
+                <div className='boxS3'>
+                <div className='thanhtoanthanhcong'>
+                       Thanh toán thành công!
+                  </div>
+                  <div className="guixacnhan">
+                      Chúng tôi sẽ gửi email xác nhận đặt phòng của bạn qua mail.
+                    </div>
+                  </div>
+              )}
           </div>
           <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
             <Button
@@ -316,7 +414,7 @@ console.log(price)
             )} */}
 
             <Button onClick={handleNext}>
-              {activeStep === steps.length - 1 ? (<Link to='/'>Trở về trang chủ</Link>) : 'Bước Kế Tiếp'}
+              {activeStep === steps.length - 1 ? (<Link id='homeBtn' to='/'>Trở về trang chủ</Link>) : 'Bước Kế Tiếp'}
             </Button>
           </Box>
         </React.Fragment>
@@ -352,28 +450,77 @@ export const PaymentForm = () => {
             {/* <div>
             <div  className='payDetailContainer'>
                                 <div>
-                                Loại thẻ
+                                Thanh toán bằng thẻ
                                 </div>
                                 <div>
-                                    <div>
-                                       <div>Visa</div>
-                                       <input type='radio'/>
-                                    </div>
-                                    <div>
-                                       <div>MasterCard</div>
-                                       <input type='radio'/>
-                                    </div>
+                                      {
+                                        cards.map((card) => {
+                                          return <div>
+                                             <div>
+                                               <img src={require(``+card.url+``)}/>
+                                               <div>{card.name} </div>
+                                               <input type='radio'/>
+                                               </div>
+                                            </div>
+                                        })
+                                      }
                                 </div>
                                 
                             </div>
-            <div  className='payDetailContainer'>
-                                <div>
-                                 Số tài khoản / Số thẻ
-                                </div>
-                                <input/>
+                       <div  className='payDetailContainer'>
+                               <div>
+                                    <div>
+                                       Tên trên thẻ
+                                    </div>
+                                    <input type='text'/>
+                              </div>
+                              <div>
+                                     <div>
+                                      Số tài khoản / Số thẻ
+                                     </div>
+                                     <input type='text/>
+                              </div>
                             </div>
-            </div> */}
-        </div>
+                            <div  className='payDetailContainer'>
+                                <div>
+                                     <div>
+                                       Ngày hết hạn
+                                      </div>
+                                      <input type='date'/>
+                                 </div> 
+                                 <div>   
+                                     <div>
+                                       Mã bảo mật CVC
+                                    </div>
+                                     <input type='text'/>
+                                  </div>
+                                <img src={require('./card Img/cvv-icon.png')}/>
+                            </div>
+                            <div  className='payDetailContainer'>
+                                <div>
+                                 Thanh toán bằng ví điện tử
+                                </div>
+                                <div>
+                                   <div>
+                                     <img src={require('./card Img/momo.png')}/>
+                                     MoMo
+                                     <input type='radio'/>
+                                   </div>
+                                   <div>
+                                     <img src={require('./card Img/paypal_3.png')}/>
+                                     Paypal
+                                     <input type='radio'/>
+                                   </div>
+                                </div>
+                            </div>
+                            <div  className='payDetailContainer'>
+                                <div>
+                                 Số tài khoản / điện thoại
+                                </div>
+                                <input type='text'/>
+                            </div>
+                                    </div> */}
+        </div> 
     )
 }
 
