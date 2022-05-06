@@ -10,10 +10,11 @@ export const HeaderBar = () => {
     return (
         <div className="header-bar">
             <HeaderLogo />
+            
             <NativeContainer />
             <AccountDiv />
 
-
+ 
 
 
 

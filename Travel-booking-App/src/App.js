@@ -7,6 +7,7 @@ import {
   HelpSection,
   FooterBar,
   HotelsDetail,
+  DiscountPage,
 } from "./components";
 import { CityDetail } from "./components/Pages/CityPage/City Details";
 import { PaymentForm } from "./components/Pages/PaymentPage/PaymentForm/PaymentForm";
@@ -36,6 +37,7 @@ function App() {
       <HeaderBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/discount" element={<DiscountPage />} />
         <Route path="/hotels" element={<HotelsDetailPage />}>
           <Route path=":id" element={<HotelsDetail />} />
         </Route>

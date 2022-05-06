@@ -1,0 +1,47 @@
+.randomPicContainer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgb(0, 212, 202);
+}
+.randomPic{
+    padding: 20px;
+}
+.discountBg {
+    border-radius:500px 0px 0px 500px;
+    width: 1400px;
+    float: right;
+    
+}
+.discountPicBg {
+    
+    width: 1400px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: -1600px;
+    justify-content: center;
+    margin-bottom: -1180px;
+}
+.discountPicCard {
+    width: 350px;
+    height: 310px;
+    background-color: rgb(255, 255, 255);
+    margin: 40px;
+    margin-bottom: 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 20px rgb(245, 253, 255);
+
+}
+.discountPicImg {
+    width: 350px;
+    opacity: 1;
+}
+.discountTitle {
+    font-weight: bolder;
+    margin-top: 10px;
+}
+.discountDetail {
+    margin-top: 8px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
