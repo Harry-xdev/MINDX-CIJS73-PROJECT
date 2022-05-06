@@ -16,7 +16,7 @@ export const Suggestion = () => {
         const data = dataHotel.filter((item) => {
               return item.suggest === 'true'
         })
-        console.log(data)
+        // console.log(data)
         setSuggestionHotels(data)
         
     }

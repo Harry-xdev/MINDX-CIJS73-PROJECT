@@ -1,0 +1,68 @@
+.detailContainer {
+   display : flex;
+   justify-content: center;
+}
+.detailSubContainer {
+    width : 1400px;
+    margin : auto;
+    border : 1px solid black ;
+    padding : 0 300px;
+}
+.detailFirstContainer {
+    margin : 20px 0;
+}
+.mainImg {
+    width : 300px ;
+    height : 300px ;
+}
+.subImg {
+    width : 100px;
+    height : 100px;
+}
+.detailInfoContainer {
+    display: flex;
+    margin : 10px 0;
+}
+.detailName {
+    font-size: 30px;
+    font-weight: bolder;
+}
+.detailStar {
+    font-size: 30px;
+    margin-left: 15px;
+}
+.detailAddress {
+    color : rgb(39, 177, 223);
+    text-align: left;
+}
+.detailSum {
+    color:grey;
+    text-align: left;
+    width :800px ;
+}
+.convenientContainer {
+    margin: 10px 0;
+}
+.detailRoomTitle {
+    font-size: 20px;
+    font-weight: bolder;
+    text-align: left;
+}
+.detailRoomCard {
+    display : flex ;
+}
+.detailRoomImg {
+    width : 300px;
+    height : 300px;
+}
+.cmtBox {
+    margin : 30px 0;
+}
+.cmtTitle {
+    color : grey;
+    font-size: 25px;
+}
+
+.otherCmt {
+    border : 1px solid black;
+}

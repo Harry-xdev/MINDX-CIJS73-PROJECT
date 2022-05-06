@@ -14,6 +14,7 @@ import { HomePage } from "./components/Pages/HomePage/home";
 import { Route, Routes } from "react-router-dom";
 import { SignIn, SignUp } from "./components/Pages/UserPage";
 import { AccountData } from "./components/Datas/UserData/accountData";
+import { HotelsDetailWithSearch } from "./components/Pages/HomePage/UserSearchForm/UserSearchWithNameHotel";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -41,6 +42,8 @@ function App() {
         <Route path="/city" element={<CityPage />}>
           <Route path=":name" element={<CityDetail />} />
         </Route>
+        <Route path=":searchWithNameHotel" element={<HotelsDetailWithSearch />}/>
+        <Route path=":searchWithAddressHotel" element={<CityDetail />} />
         <Route path="/payment" element={<Payment />}>
           <Route path=":id" element={<PaymentForm />} />
         </Route>

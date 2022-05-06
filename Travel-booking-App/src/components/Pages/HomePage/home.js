@@ -10,7 +10,7 @@ export const HomePage = () => {
     return (
         <div>
             <BannerSection />
-            <UserSearchForm/>
+            {/* <UserSearchForm/> */}
             <DiscountContainer />
             <CitySection/>
             <Suggestion />

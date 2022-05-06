@@ -1,0 +1,1 @@
+// tên ks  , địa chỉ + tóm tắt chung , thông tin địa điểm (sẽ hiện các mục thông tin riêng cho từng item trong list data khách sạn)
