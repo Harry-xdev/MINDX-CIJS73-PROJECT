@@ -129,7 +129,7 @@ useEffect(() => {
     }
 }, [selectedHotel,searchParams])
 
- toString(price).replace(" ","")
+
 
   const [bed, setBed] = useState(false)
 

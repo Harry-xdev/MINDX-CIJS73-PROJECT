@@ -1,5 +1,5 @@
 .helpContainer {
-    background-color: lightgrey;
+    background-color: rgba(0, 187, 174, 0.171) ;
     display:flex;
     justify-content: space-around;
     padding: 50px 0px;
