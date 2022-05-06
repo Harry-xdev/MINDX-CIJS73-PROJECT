@@ -2,9 +2,10 @@ import './suggestion.css'
 import axios from 'axios'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { BsStarFill } from "react-icons/bs";
+import { BsStarFill,BsFillChatLeftFill } from "react-icons/bs";
 import { IoMdPin } from "react-icons/io";
 import { NavLink } from 'react-router-dom';
+ 
 
 export const Suggestion = () => {
 
@@ -36,6 +37,7 @@ export const Suggestion = () => {
             {
                 suggestionHotels.map(suggestionHotel => {
                     return <div key={suggestionHotel.id} className='suggestionHotelCard'> 
+                   <div className='bgDetailHotelCard'> </div>
                   <div className="suggestionHotelCardInside" >  
                     <img src={require(``+suggestionHotel.img1+``)} className="suggestionHotelImg"/>
                     <div className='suggestHotelCardInfo'>
@@ -59,8 +61,8 @@ export const Suggestion = () => {
                    </div> 
                        <div className='suggestHotelCardRatingCon'>
                          <div className='suggestHotelCardRating'>
-                             <div> Rating </div> 
-                             {suggestionHotel.totalRating} 
+                             <div> <BsFillChatLeftFill/> </div> 
+                              <div id='ratingNumber'> {suggestionHotel.totalRating} </div>
                          </div>
                          
                          <div className='suggestHotelCardPrice'>
@@ -73,6 +75,10 @@ export const Suggestion = () => {
                 })
             }
         </div>
+          <img id="bgPicSug" src={require('./bgPic/bgPic.jpg')}/>
+          <img id="bgPicSug2" src={require('./bgPic/bgPic2.jpg')}/>
+          <img id="bgPicSug3" src={require('./bgPic/bgPic3.jpg')}/>
+          
         </div>
     )
 }

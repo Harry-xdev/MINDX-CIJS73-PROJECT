@@ -48,9 +48,9 @@ export const VacationRentals = () => {
                 {
                     items.map( (item) => {
                        return <div>
-                              <div>
+                              <div className='itemHouseCard'>
                                   <div>
-                                      <img src={require(``+item.url+``)}/>
+                                      <img id="houseCardImg" src={require(``+item.url+``)}/>
                                   </div>
                                   <div>
                                       {item.name}

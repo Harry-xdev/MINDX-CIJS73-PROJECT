@@ -1,7 +1,7 @@
 .suggestionTitle {
-    
+    color:rgb(0, 182, 189);
     font-size: 30px;
-    margin-top: 50px;
+    margin-top: 70px;
     font-weight: bolder;
 }
 .suggestionSubContainer{
@@ -12,23 +12,32 @@
 }
 .suggestionHotelCard {
     
-    width: 1100px;
+    
     margin: 50px 0 0 0;
     display: flex;
     padding: 20px;
+    justify-content: center;
+    align-items: center;
 }
-.suggestionHotelCardInside {
-    display: flex;
-  
-    
+.bgDetailHotelCard{
+    width: 900px;
+    height: 700px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    z-index: -1;
+    border-radius:25px ;
+    padding: 20px;
+    opacity: 0.8;
 }
 .suggestionHotelImg {
-    border: 1px solid black;
-    width: 300px;
-    height: 300px;
+   
+    width: 700px;
+    height: 500px;
+    border-radius: 25px;
+   
 }
 .suggestHotelCardInfo {
-    border: 1px solid rgb(207, 207, 207);
+ 
     padding: 20px;
     display : flex;
     flex-direction: column;
@@ -49,20 +58,29 @@
 }
 .suggestHotelCardIntro {
     color:grey;
-    height: 180px;
+    height: 80px;
     overflow: auto;
     text-align: left;
+    width: 700px;
 }
 .suggestHotelCardRatingCon {
-    border: 1px solid rgb(207, 207, 207);
+    
     padding: 20px;
 }
 .suggestHotelCardRating {
-    color: blue;
+    color: rgb(58, 193, 202);
     font-weight: bolder;
+    font-size: 70px;
+}
+#ratingNumber{
+    font-size: 20px;
+    position: absolute;
+    margin-left: 60px;
+    margin-top: -70px;
+    color: white;
 }
 .suggestHotelCardPrice {
-    color: red;
+    color: rgba(216, 0, 0, 0.808);
     font-weight: bolder;
     font-size: 20px;
     display: flex;
@@ -79,13 +97,35 @@
 }
 .checkRooms {
     color: white;
-    background-color: #5E96AE;
-    border: 1px solid #276681;
-    border-radius: 5px;
+    background-color: #098b9cc2;
+    border: 1px solid #fafeff00;
+    border-radius: 15px;
     padding: 10px;
     margin: 10px 0 0 0;
     cursor: pointer;
 }
 .checkRooms:hover {
-    background-color: #17739b;
+    background-color: #169bcfb2;
+}
+
+#bgPicSug, #bgPicSug3 {
+    position: absolute;
+    top:1300px;
+    width: 1000px;
+    left: 0px;
+    border-radius: 0 70% 70% 0 ;
+    z-index: -2;
+    
+}
+#bgPicSug2,#bgPicSug4 {
+    position: absolute;
+    top:3300px;
+    width: 1000px;
+    right: 0px;
+    border-radius: 70% 0% 0% 70% ;
+    z-index: -2;
+    
+}
+#bgPicSug3 {
+    top:5300px;
 }

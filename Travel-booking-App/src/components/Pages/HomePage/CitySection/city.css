@@ -1,3 +1,8 @@
+
+h3{
+    font-size: 30px;
+    color: rgb(0, 182, 189);
+}
 .cityContainer {
     display : flex;
     justify-content: center;
