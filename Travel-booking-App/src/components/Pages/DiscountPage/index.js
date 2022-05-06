@@ -84,6 +84,7 @@ useEffect(() => {
     setRandomPic(randomPic)
     setBgPic(bgPic)
     setDiscountPic(discountPic)
+    
 },[])
 
     return <div>

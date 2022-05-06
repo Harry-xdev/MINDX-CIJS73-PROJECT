@@ -3,8 +3,10 @@ import './logo.css'
 export const HeaderLogo = () => {
 
     return (
-        <div className="main-logo">
-            <Link to='/' >Logo</Link>
+        <div >
+            <Link to='/' >
+                <img className="main-logo" src={require('./logo.png')}/>
+            </Link>
         </div>
     )
 }

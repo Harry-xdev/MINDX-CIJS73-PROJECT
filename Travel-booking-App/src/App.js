@@ -19,6 +19,7 @@ import { HotelsDetailWithSearch } from "./components/Pages/HomePage/UserSearchFo
 import { useState, useEffect } from "react";
 
 function App() {
+  
   const [showBtn, setShowBtn] = useState(false);
   const BackTop = () => {
     document.documentElement.scrollTop = 0;
@@ -27,6 +28,7 @@ function App() {
     setShowBtn(document.documentElement.scrollTop > 0 ? true : false);
   };
   useEffect(() => {
+    
     document.addEventListener("scroll", scrollToTop);
     return () => {
       document.removeEventListener("scroll", scrollToTop);
