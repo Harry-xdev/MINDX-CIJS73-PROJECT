@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './signup.css'
 
 export const SignUp = () => {
-    
+
     const [accounts, setAccounts] = useState([])
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -10,33 +10,40 @@ export const SignUp = () => {
     const [password, setPassword] = useState("")
     const [cfmpassword, setCfmpassword] = useState("")
 
-    
-
     const fecthData = async () => {
         const response = await fetch('https://6268162901dab900f1c9969b.mockapi.io/appi/v1/userList')
         const accData = await response.json()
         setAccounts(accData)
-        
     }
 
     useEffect(() => {
         fecthData()
     }, [])
-    console.log(accounts)
+    // console.log(accounts)
 
-    // let arrEmail = accounts.filter(emailList)
-    // const emailList = () => {
-    //     email
-    // }
-    // console.log(arrEmail)
+    const arrEmail = accounts.filter(function (item) {
+        return item.email === email
+    })
+    // console.log("arrEmail:", arrEmail)
+    // console.log(arrEmail.length)
 
-    const addNewAccount = ({firstName, lastName, email, password, cfmpassword}) => {
+    const checkEmail = () => {
+        if (email === "") {
+            alert(`Please input email!`)
+        } else if (arrEmail.length === 0) {
+            alert(`You can use this email!`)
+        } else { 
+            alert(`Email has been used! Please choose another email!`)
+        }
+    }
+
+    const addNewAccount = ({ firstName, lastName, email, password, cfmpassword }) => {
         fetch('https://6268162901dab900f1c9969b.mockapi.io/appi/v1/userList', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({firstName, lastName, email, password, cfmpassword}),
+            body: JSON.stringify({ firstName, lastName, email, password, cfmpassword }),
         })
     }
 
@@ -45,7 +52,7 @@ export const SignUp = () => {
             <h1>Sign Up</h1>
             <form className='input-form'>
                 <label>First Name</label>
-                <input placeholder='Your first name'
+                <input placeholder='Your first name'    
                     type='text'
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
@@ -62,8 +69,10 @@ export const SignUp = () => {
                 <input placeholder='Email'
                     type='email'
                     value={email}
+                    id="email-input"
                     onChange={(e) => setEmail(e.target.value)}
                 />
+                <button onClick={checkEmail}>Check email</button>
 
                 <label>Password</label>
                 <input placeholder='Password'
@@ -84,17 +93,13 @@ export const SignUp = () => {
             </div>
             <button
                 onClick={() => {
-                    
                     addNewAccount({
                         firstName: firstName,
                         lastName: lastName,
-                        email : email,
-                        password : password,
+                        email: email,
+                        password: password,
                         cfmpassword: cfmpassword,
                     })
-                    
-
-                    alert(`You have signed up!`)
                 }}>Sign Up
             </button>
             <button>Already have an account? Sign in</button>
