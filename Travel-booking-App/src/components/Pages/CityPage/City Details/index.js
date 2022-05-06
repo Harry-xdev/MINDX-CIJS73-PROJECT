@@ -22,21 +22,22 @@ export const CityDetail = () => {
     });
     // console.log("city ", data);
     setCityDetail(data);
-  };
-
-  const handleChangeWithName = (e) => {
-    setSearchWithNameHotel(e.target.value);
+    setCityDetailsAfterSearch(data);
   };
 
   useEffect(() => {
     handleFetchHotelListDetail();
   }, []);
 
+  const handleChangeWithName = (e) => {
+    setSearchWithNameHotel(e.target.value);
+  };
+
   const handleFetchWithName = () => {
     const results = cityDetails.filter((hotel) => {
-      hotel.toLowerCase().includes(searchWithNameHotel);
+      return hotel.name.toLowerCase().includes(searchWithNameHotel);
     });
-    if (results === null) {
+    if (searchWithNameHotel === "") {
       setCityDetailsAfterSearch(cityDetails);
     } else {
       setCityDetailsAfterSearch(results);
@@ -49,8 +50,9 @@ export const CityDetail = () => {
 
   return (
     <div>
-      <div className="searchWithName">
-        <>Tim theo ten khach san</>
+      <div className="suggestionContainer">
+        <div className="suggestionTitle">{params.name}</div>
+        <div className="searchWithName">
         <input
           type="text"
           placeholder="nhap ten khach san"
@@ -58,10 +60,8 @@ export const CityDetail = () => {
           onChange={handleChangeWithName}
         />
       </div>
-      <div className="suggestionContainer">
-        <div className="suggestionTitle">{params.name}</div>
         <div className="suggestionSubContainer">
-          {cityDetails.map((suggestionHotel) => {
+          {cityDetailsAfterSearch.map((suggestionHotel) => {
             return (
               <div key={suggestionHotel.id} className="suggestionHotelCard">
                 <div className="suggestionHotelCardInside">
