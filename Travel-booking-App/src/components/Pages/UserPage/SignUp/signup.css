@@ -3,7 +3,9 @@
     flex-direction: column;
     height: auto;
     width: 420px;
-    border: 1px solid black;
+    border: 3px solid rgb(0, 212, 202);
+    border-radius: 20px;
+    align-items: center;
 }
 
 form {
@@ -11,13 +13,37 @@ form {
     flex-direction: column;
     height: auto;
     width: 400px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: left;
 }
 #checkbox {
     padding: 15px;
 }
-
+input {
+    border-radius: 10px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-style: italic;
+ 
+    border: 1px solid gray;
+}
+button {
+    margin: 2px 0px 2px 0px;
+}
+label {
+    font-weight: 600;
+}
+#email-input {
+    width: 332px;
+}
+#check-btn {
+    border: none;
+    border-radius: 15px;
+    height: 35px;
+    margin-left: 10px;
+    width: 50px;
+}
 a {
     color: rgb(68, 202, 247);
 }

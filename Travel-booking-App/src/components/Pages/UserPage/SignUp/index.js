@@ -44,7 +44,7 @@ export const SignUp = () => {
         "*Please input your password!",
         "*Please re-input your password!",
     ]
-   
+
 
 
     const checkEmail = (event) => {
@@ -60,7 +60,7 @@ export const SignUp = () => {
 
     let navigate = useNavigate()
     const redirectFunc = () => {
-        setTimeout(() => {navigate('/signin')}, 2000)
+        setTimeout(() => { navigate('/signin') }, 2000)
     }
 
     const handleSubmit = () => {
@@ -72,7 +72,7 @@ export const SignUp = () => {
             setI(7)
         } else if (cfmpassword === "") {
             setI(8)
-        }else if (cfmpassword !== password) {
+        } else if (cfmpassword !== password) {
             setI(4)
         } else {
             setI(3)
@@ -116,14 +116,15 @@ export const SignUp = () => {
                 />
 
                 <label>Email</label>
-                <input placeholder='Email'
-                    type='email'
-                    value={email}
-                    id="email-input"
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-                <button onClick={checkEmail}>Check email</button>
-
+                <div>
+                    <input placeholder='Email'
+                        type='email'
+                        value={email}
+                        id="email-input"
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <button id='check-btn' onClick={checkEmail}>Check</button>
+                </div>
                 <label>Password</label>
                 <input placeholder='Password'
                     type='password'
@@ -136,7 +137,7 @@ export const SignUp = () => {
                     value={cfmpassword}
                     onChange={(e) => setCfmpassword(e.target.value)}
                 />
-                <div><AlertBar alert={alert[i]} /></div>
+                <div style={{ height: 15 }}><AlertBar alert={alert[i]} /></div>
             </form>
             <div>
                 <input type='checkbox' id='checkbox' name='checkbox' />
