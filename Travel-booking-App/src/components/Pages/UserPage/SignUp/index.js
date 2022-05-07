@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from 'react'
 import './signup.css'
 import { AlertBar } from './alert'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -139,16 +139,16 @@ export const SignUp = () => {
                 />
                 <div style={{ height: 15 }}><AlertBar alert={alert[i]} /></div>
             </form>
-            <div>
-                <input type='checkbox' id='checkbox' name='checkbox' />
-                <label htmlFor='checkbox'>Remmber me</label>
-            </div>
-            <button
+            {/* <div> */}
+                {/* <input type='checkbox' id='checkbox' name='checkbox' /> */}
+                {/* <label htmlFor='checkbox'>Remmber me</label> */}
+            {/* </div> */}
+            <button className='submit-btn'
                 onClick={() => {
                     handleSubmit()
                 }}>Sign Up
             </button>
-            <button>Already have an account? Sign in</button>
+            <div>Already have an account? <Link to='/signin'>Sign in</Link></div>
             <div><p>By signing in, I angree to Agoda's <a href='https://www.google.com'>Term of Use</a> and <a href='https://www.google.com'>Privacy Policy.</a></p></div>
 
         </div>

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './signin.css'
 import React, { useState, useEffect } from 'react'
 
@@ -8,6 +8,12 @@ export const SignIn = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    let navigate = useNavigate()
+    const redirectFunc = () => {
+        setTimeout(() => { navigate('/') }, 3000)
+        
+    }
 
     return (
         <div className='container'>
@@ -32,11 +38,13 @@ export const SignIn = () => {
                 />
 
             </form>
-            <div>
-                <input type='checkbox' id='checkbox' name='checkbox' />
-                <label htmlFor='checkbox'>Remmber me</label>
-            </div>
-            <button>Sign In</button>
+            {/* <div> */}
+                {/* <input type='checkbox' id='checkbox' name='checkbox' /> */}
+                {/* <label htmlFor='checkbox'>Remmber me</label> */}
+            {/* </div> */}
+            <button className='submit-btn'
+                onClick={redirectFunc()}
+            >Sign In</button>
             <div className='help-div'>
                 <p><Link to=''>Forgot password?</Link></p>
                 <p><Link to='/signup'>Create an account</Link></p>
