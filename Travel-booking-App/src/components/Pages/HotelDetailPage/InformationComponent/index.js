@@ -127,7 +127,7 @@ export const HotelsDetail = () => {
         return (
           <div className="detailSubContainer">
             <div className="detailFirstContainer">
-              <div>
+              <div className='imgCon'>
                 <img className="mainImg" src={require(``+hotelDetail.img1+``)} />
                  <div id='imgCon'>
                  <img className="subImg" src={require(``+hotelDetail.img2+``)} />
