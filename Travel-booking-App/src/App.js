@@ -59,7 +59,7 @@ function App() {
       <FooterBar />
       {showBtn && (
         <button className="topBtn" onClick={BackTop}>
-          back to TOP
+          TOP
         </button>
       )}
     </div>

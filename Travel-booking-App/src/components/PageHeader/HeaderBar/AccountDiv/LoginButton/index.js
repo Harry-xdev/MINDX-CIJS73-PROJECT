@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './login.css'
 export const LoginButton = () => {
 
     return (
-        <Link to='/signin' className='login-btn btn login-link'>Sign in</Link>
+        <NavLink to='/signin' className='login-btn btn login-link'>Sign in</NavLink>
     )
 }
