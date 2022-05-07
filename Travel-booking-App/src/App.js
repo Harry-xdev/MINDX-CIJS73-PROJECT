@@ -17,6 +17,7 @@ import { SignIn, SignUp } from "./components/Pages/UserPage";
 import { AccountData } from "./components/Datas/UserData/accountData";
 import { HotelsDetailWithSearch } from "./components/Pages/HomePage/UserSearchForm/UserSearchWithNameHotel";
 import { useState, useEffect } from "react";
+import {useLocation} from 'react-router'
 
 function App() {
   
@@ -27,6 +28,12 @@ function App() {
   const scrollToTop = () => {
     setShowBtn(document.documentElement.scrollTop > 0 ? true : false);
   };
+  
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   useEffect(() => {
     
     document.addEventListener("scroll", scrollToTop);
