@@ -210,11 +210,14 @@ export const HotelsDetail = () => {
             </div>
             <div className="cmtBox">
               <div className="cmtTitle">Bài đánh giá về {hotelDetail.name}</div>
-              <div>
-                <span>Đánh giá của bạn</span>
-                <div>
+              <div className='formCmtLayout'>
+              <div className='formCmt'>
+                <div id='danhgiaTitle'>Đánh giá của bạn</div>
+
+                <div className='cmtDetail'>
                   <label>Nhập tên đăng nhập:</label>
                   <input
+                  id='inputText'
                     type="text"
                     placeholder="tên đăng nhập ..."
                     value={userNameIn}
@@ -223,20 +226,22 @@ export const HotelsDetail = () => {
                     }}
                   />
                 </div>
-                <div>
+                <div className='cmtDetail'>
                   <label>Nhập điểm đánh giá của bạn:</label>
                   <input
+                   id='inputText'
                     type="number"
-                    placeholder="từ 1 đến 10"
+                    placeholder="vd: 10"
                     value={ratingIn}
                     onChange={(e) => {
                       setRatingIn(e.target.value);
                     }}
                   />
                 </div>
-                <div>
+                <div className='cmtDetail'>
                   <label>Nhập bình luận của bạn:</label>
                   <input
+                   id='inputText'
                     type="text"
                     placeholder="tôi thấy ..."
                     value={commentIn}
@@ -245,7 +250,9 @@ export const HotelsDetail = () => {
                     }}
                   />
                 </div>
+
                 <button
+                id='cmtBtn'
                   onClick={() => {
                     creatComment({
                       idHotel: params.id,
@@ -259,21 +266,24 @@ export const HotelsDetail = () => {
                 </button>
               </div>
               <div className="otherCmt">
-                Các đánh giá khác
+                 <div id='danhgiaTitle2'> Các đánh giá khác </div>
                 <div>
                   {(cmts || []).map((cmt) => {
-                    return (
-                      <div>
-                        <div>{cmt.userName}</div>
-                        <div>
-                          <div> Rating </div>
-                          {cmt.rating}
-                        </div>
-                        <div>{cmt.comment}</div>
-                      </div>
+                    return ( <div className='otherCmtBox'>
+                         <img id='avaCmt' src={require('./Img/Ava cmt/img.png')}/>
+                                   <div className='userCmtInfo'>
+                                      <div className='otherCmtDetail'>Người dùng: {cmt.userName}</div>
+                                      <div className='otherCmtDetail'>
+                                           <div> Đánh giá: {cmt.rating} </div>
+                                           
+                                       </div >
+                                      <div className='otherCmtDetail' >"{cmt.comment}"</div>
+                                   </div>
+                          </div>
                     );
                   })}
                 </div>
+              </div>
               </div>
             </div>
           </div>

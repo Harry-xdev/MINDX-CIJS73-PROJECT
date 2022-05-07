@@ -62,9 +62,11 @@ export const CityDetail = () => {
         <BsSearch id='iconSearch'/>
       </div>
         <div className="suggestionSubContainer">
+          <img id='cityPageImgBg' src={require('./bgPic.jpg')}/>
           {cityDetailsAfterSearch.map((suggestionHotel) => {
             return (
               <div key={suggestionHotel.id} className="suggestionHotelCard">
+                <div className='bgDetailHotelCard'> </div>
                 <div className="suggestionHotelCardInside">
                   <img
                     src={require(`` + suggestionHotel.img1 + ``)}
