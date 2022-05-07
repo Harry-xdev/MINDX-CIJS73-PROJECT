@@ -3,6 +3,7 @@
     display:flex;
     justify-content: space-around;
     padding: 50px 0px;
+    color:rgba(0, 0, 0, 0.616);
 }
 .helpDetail {
     margin: 50px;
@@ -31,11 +32,28 @@
     height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #020202;
+    background-color: #02020296;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
 .helpTitle:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+#foot1{
+    margin-bottom: 10px;
+    margin-top: 40px;
+}
+#foot3{
+    margin-top: 60px;
+    font-size: 13px;
+}
+.footerPicCon{
+    display:flex;
+   
+    align-items: center;
+}
+.footerPic{
+    width:100px;
+    margin: 40px 40px;
 }

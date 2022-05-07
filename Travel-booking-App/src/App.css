@@ -13,7 +13,12 @@ html {
     bottom:20px ;
     right: 20px;
     cursor: pointer;
+    background-color: rgb(78, 167, 162); 
+    border:none;
+    padding: 15px 15px;
+    border-radius: 50%;
+    color:aliceblue;
 }
 .topBtn:hover{
-    background-color: bisque;
+    background-color: rgb(0, 212, 202); 
 }

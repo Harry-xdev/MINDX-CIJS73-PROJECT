@@ -6,10 +6,16 @@
 }
 .detailSubContainer {
     margin : auto;
-    
+    border: 3px solid white;
 }
 .detailFirstContainer {
     margin : 20px 0;
+}
+.imgCon{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .mainImg {
     width : 700px ;
@@ -130,12 +136,82 @@
 }
 .cmtBox {
     margin : 30px 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .cmtTitle {
     color : grey;
     font-size: 25px;
 }
-
+.formCmtLayout {
+    display:flex;
+}
+.formCmt{
+    margin:20px;
+    background-color :rgba(127, 207, 207, 0.808);
+    width:600px;
+    height:310px;
+    border-radius: 20px;
+    color:White;
+    float:left;
+}
+#danhgiaTitle {
+    padding:20px;
+    font-weight: bolder;
+    font-size : 20px;
+}
+.cmtDetail{
+    text-align: left;
+    
+    display:flex;
+    flex-direction: column;
+    margin:10px ;
+    margin-left: 50px;
+}
+#inputText {
+    border:none;
+    padding:10px;
+    background-color: rgba(0, 0, 255, 0);
+    border-bottom: 1px solid white;
+    width:70%;
+    color:rgb(255, 255, 255);
+}
+#cmtBtn {
+    padding:10px 15px;
+    background-color: white;
+    color:rgba(127, 207, 207, 0.808);
+    border : 1px solid rgba(127, 207, 207, 0.808);
+    border-radius: 10px;
+}
 .otherCmt {
-    border : 1px solid black;
+    border : 1px solid rgba(127, 207, 207, 0.808);
+    border-radius: 20px;
+    width:700px;
+    margin-top: 20px;
+}
+#danhgiaTitle2 {
+    padding:20px;
+    font-weight: bolder;
+    font-size : 20px;
+}
+.otherCmtBox{
+    border:1px solid rgba(127, 207, 207, 0.808);
+    display:flex;
+    border-radius: 20px;
+    margin: 10px 20px 20px;
+}
+#avaCmt {
+   width:80px;
+   height:80px;
+}
+.userCmtInfo {
+    color :grey;
+    text-align: left;
+    align-items: center;
+    margin-right: 20px;
+}
+.otherCmtDetail {
+    margin:10px 0;
 }

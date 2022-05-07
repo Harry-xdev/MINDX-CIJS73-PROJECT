@@ -20,3 +20,12 @@
     
     color: white;
 }
+#cityPageImgBg {
+    position:absolute;
+    width:50%;
+    left:0;
+    margin-top:-50px;
+    border-radius: 0 70% 70% 0;
+    z-index: -2;
+   
+}
