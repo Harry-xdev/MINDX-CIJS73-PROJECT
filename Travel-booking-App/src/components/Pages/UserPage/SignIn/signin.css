@@ -12,7 +12,7 @@ form {
     flex-direction: column;
     height: auto;
     width: 400px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: left;
 }
 #checkbox {
