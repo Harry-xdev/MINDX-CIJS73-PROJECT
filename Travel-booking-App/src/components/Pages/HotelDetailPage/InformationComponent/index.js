@@ -9,7 +9,7 @@
 import { useParams, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./hotelDetail.css";
-import { BsStarFill } from "react-icons/bs";
+import { BsStarFill,BsFillHandThumbsUpFill } from "react-icons/bs";
 const ConvenientList = [
   {
     id: 1,
@@ -120,7 +120,7 @@ export const HotelsDetail = () => {
   }, []);
 
   return (
-    <div className="detailContainer">
+    <div className="detailHotelContainer">
       {hotelDetails.map((hotelDetail) => {
         // console.log(hotelDetail.convenient);
       
@@ -129,9 +129,11 @@ export const HotelsDetail = () => {
             <div className="detailFirstContainer">
               <div>
                 <img className="mainImg" src={require(``+hotelDetail.img1+``)} />
-                <img className="subImg" src={require(``+hotelDetail.img2+``)} />
+                 <div id='imgCon'>
+                 <img className="subImg" src={require(``+hotelDetail.img2+``)} />
                 <img className="subImg" src={require(``+hotelDetail.img3+``)} />
                 <img className="subImg" src={require(``+hotelDetail.img4+``)} />
+                </div>
               </div>
               <div className="detailInfoContainer">
                 <div className="detailName">{hotelDetail.name}</div>
@@ -144,15 +146,16 @@ export const HotelsDetail = () => {
               <div className="detailSum">{hotelDetail.summary}</div>
             </div>
             <div className="convenientContainer">
-              Tiện ích
-              
+               <div id="tienich"> Tiện ích </div>
+              <div className="convenientListContainer">
               {ConvenientList.filter(icon => hotelDetail.convenient.includes(icon.name)).map((icon) => {
-                   return <div>
-                     <img src={require(``+icon.img+``)}/>
+                   return <div id='convenientIcon'>
+                     <img id='convenientIconImg' src={require(``+icon.img+``)}/>
                      {icon.name}
                      </div>
               })
               }
+              </div>
             </div>
             <div>
               <div className="detailRoomTitle">
@@ -163,14 +166,21 @@ export const HotelsDetail = () => {
                   <div>
                     <img className="detailRoomImg" src={require(``+hotelDetail.room1Img+``)} />
                   </div>
-                  <div>
-                    <div> {hotelDetail.room1Name}</div>
+                  <div className='khungNoidung'>
+                    <div className="detailRoomName"> {hotelDetail.room1Name}</div>
+                    <div id='detailRoom'>
                     <div> Sức chứa {hotelDetail.room1Capacity} người</div>
-                    <div> {hotelDetail.room1Price} / đêm </div>
-                  </div>
-                  <div>
+                    <div id='noidung'>
+                    <div> <BsFillHandThumbsUpFill/> Đưa đón sân bay </div>
+                    <div><BsFillHandThumbsUpFill/> Wifi miễn phí </div>
+                    <div> <BsFillHandThumbsUpFill/> Dọn phòng hằng ngày</div>
+                    </div>
+                    <div id='roomPrice'> {hotelDetail.room1Price} / đêm </div>
+                   
+
+                    </div>
                     <Link to={`/payment/${hotelDetail.id}?room=1`}>
-                      <button>Đặt Phòng</button>
+                      <button id='bookingBtn'>Đặt Phòng</button>
                     </Link>
                   </div>
                 </div>
@@ -178,14 +188,21 @@ export const HotelsDetail = () => {
                   <div>
                     <img className="detailRoomImg" src={require(``+hotelDetail.room2Img+``)} />
                   </div>
-                  <div>
-                    <div> {hotelDetail.room2Name}</div>
-                    <div> Sức chứa {hotelDetail.room2Capacity} người </div>
-                    <div> {hotelDetail.room2Price} / đêm </div>
-                  </div>
-                  <div>
-                    <Link to={`/payment/${hotelDetail.id}?room=2`}>
-                      <button>Đặt Phòng</button>
+                  <div className='khungNoidung'>
+                    <div className="detailRoomName"> {hotelDetail.room1Name}</div>
+                    <div id='detailRoom'>
+                    <div> Sức chứa {hotelDetail.room1Capacity} người</div>
+                    <div id='noidung'>
+                    <div> <BsFillHandThumbsUpFill/> Đưa đón sân bay </div>
+                    <div><BsFillHandThumbsUpFill/> Wifi miễn phí </div>
+                    <div> <BsFillHandThumbsUpFill/> Dọn phòng hằng ngày</div>
+                    </div>
+                    <div id='roomPrice'> {hotelDetail.room1Price} / đêm </div>
+                   
+
+                    </div>
+                    <Link to={`/payment/${hotelDetail.id}?room=1`}>
+                      <button id='bookingBtn'>Đặt Phòng</button>
                     </Link>
                   </div>
                 </div>

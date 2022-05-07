@@ -1,0 +1,22 @@
+.searchWithName {
+    background-color:  rgba(0, 183, 189, 0.712);
+    width: 250px;
+    margin: auto;
+    padding: 10px 20px;
+    display: flex;
+    border-radius:25px;
+    margin-top: 15px;
+}
+#inputSearch{
+    width: 200px;
+    height: 30px;
+    border-radius:25px;
+    border: white;
+}
+#iconSearch{
+    margin-left: 10px;
+    font-size: 30px;
+    position: relative;
+    
+    color: white;
+}

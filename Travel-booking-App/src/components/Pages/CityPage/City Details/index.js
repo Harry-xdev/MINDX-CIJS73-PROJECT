@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BsStarFill } from "react-icons/bs";
+import { BsStarFill,BsFillChatLeftFill,BsSearch } from "react-icons/bs";
 import { IoMdPin } from "react-icons/io";
 import { NavLink } from "react-router-dom";
-
+import './style.css'
 export const CityDetail = () => {
   const params = useParams();
   console.log(params);
@@ -53,12 +53,13 @@ export const CityDetail = () => {
       <div className="suggestionContainer">
         <div className="suggestionTitle">{params.name}</div>
         <div className="searchWithName">
-        <input
+        <input id="inputSearch"
           type="text"
-          placeholder="nhap ten khach san"
+          placeholder="Tìm theo tên khách sạn..."
           value={searchWithNameHotel}
           onChange={handleChangeWithName}
         />
+        <BsSearch id='iconSearch'/>
       </div>
         <div className="suggestionSubContainer">
           {cityDetailsAfterSearch.map((suggestionHotel) => {
@@ -90,8 +91,8 @@ export const CityDetail = () => {
                 </div>
                 <div className="suggestHotelCardRatingCon">
                   <div className="suggestHotelCardRating">
-                    <div> Rating </div>
-                    {suggestionHotel.totalRating}
+                  <div> <BsFillChatLeftFill/> </div> 
+                  <div id='ratingNumber'> {suggestionHotel.totalRating} </div>
                   </div>
 
                   <div className="suggestHotelCardPrice">
