@@ -30,7 +30,6 @@ export const SignIn = () => {
                         (e) => setPassword(e.target.value)
                     }
                 />
-                <label>Comfirm password</label>
 
             </form>
             <div>
