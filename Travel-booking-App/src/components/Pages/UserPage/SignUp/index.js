@@ -13,7 +13,8 @@ export const SignUp = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [cfmpassword, setCfmpassword] = useState("")
-
+    const [alertVisible, setAlertVisible] = useState(false)
+ 
     const [i, setI] = useState("")
 
     const fecthData = async () => {
@@ -65,17 +66,17 @@ export const SignUp = () => {
 
     const handleSubmit = () => {
         if (firstName === "") {
-            setI(5)
+            setAlertVisible(true)
         } else if (lastName === "") {
-            setI(6)
+            setAlertVisible(true)
         } else if (password === "") {
-            setI(7)
+            setAlertVisible(true)
         } else if (cfmpassword === "") {
-            setI(8)
+            setAlertVisible(true)
         } else if (cfmpassword !== password) {
-            setI(4)
+            setAlertVisible(true)
         } else {
-            setI(3)
+            alert(`Register successfuly!`)
             addNewAccount({
                 firstName: firstName,
                 lastName: lastName,
@@ -107,6 +108,7 @@ export const SignUp = () => {
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
                 />
+                {alertVisible && <div style={{ height: 15 }}><AlertBar alert={alert[6]} /></div>}
 
                 <label>Last Name</label>
                 <input placeholder='Your last name'
@@ -114,6 +116,7 @@ export const SignUp = () => {
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
                 />
+                {alertVisible && <div style={{ height: 15 }}><AlertBar alert={alert[7]} /></div>}
 
                 <label>Email</label>
                 <div>
@@ -124,6 +127,8 @@ export const SignUp = () => {
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <button id='check-btn' onClick={checkEmail}>Check</button>
+                {alertVisible && <div style={{ height: 15 }}><AlertBar alert={alert[0]} /></div>}
+
                 </div>
                 <label>Password</label>
                 <input placeholder='Password'
@@ -131,13 +136,15 @@ export const SignUp = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
+                {alertVisible && <div style={{ height: 15 }}><AlertBar alert={alert[7]} /></div>}
+
                 <label>Comfirm password</label>
                 <input placeholder='Comfirm password'
                     type='password'
                     value={cfmpassword}
                     onChange={(e) => setCfmpassword(e.target.value)}
                 />
-                <div style={{ height: 15 }}><AlertBar alert={alert[i]} /></div>
+                {alertVisible && <div style={{ height: 15 }}><AlertBar alert={alert[8]} /></div>}
             </form>
             {/* <div> */}
                 {/* <input type='checkbox' id='checkbox' name='checkbox' /> */}
