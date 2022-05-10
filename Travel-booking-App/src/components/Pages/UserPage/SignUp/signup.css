@@ -36,7 +36,7 @@ label {
     margin-top: 5px;
 }
 #email-input {
-    width: 332px;
+    width: 370px;
 }
 #check-btn {
     border: none;
@@ -53,7 +53,7 @@ p {
     font-size: 12px;
 }
 
-.submit-btn {
+#signup-btn {
     height: 30px;
     width: 80px;
     background-color: rgb(0, 212, 202);
@@ -64,4 +64,11 @@ p {
 button:active {
     background-color: rgb(4, 86, 82);
     color: white;
+}
+
+#valid {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: 2px solid rgb(196, 193, 193);
 }

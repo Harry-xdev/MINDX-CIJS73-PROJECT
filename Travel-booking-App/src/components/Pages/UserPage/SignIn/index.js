@@ -9,11 +9,13 @@ export const SignIn = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    let navigate = useNavigate()
-    const redirectFunc = () => {
-        setTimeout(() => { navigate('/') }, 3000)
-        
-    }
+
+
+    // let navigate = useNavigate()
+    // const redirectFunc = () => {
+    //     setTimeout(() => { navigate('/') }, 3000)
+
+    // }
 
     return (
         <div className='container'>
@@ -42,8 +44,8 @@ export const SignIn = () => {
                 {/* <input type='checkbox' id='checkbox' name='checkbox' /> */}
                 {/* <label htmlFor='checkbox'>Remmber me</label> */}
             {/* </div> */}
-            <button className='submit-btn'
-                onClick={redirectFunc()}
+            <button id="signin-btn"
+                // onClick={redirectFunc()}
             >Sign In</button>
             <div className='help-div'>
                 <p><Link to=''>Forgot password?</Link></p>
