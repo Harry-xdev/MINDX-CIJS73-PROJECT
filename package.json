@@ -2,6 +2,7 @@
   "dependencies": {
     "formik": "^2.2.9",
     "react-slideshow-image": "^3.7.3",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "homepage": "https://myusername.github.io/my-app"
   }
 }
